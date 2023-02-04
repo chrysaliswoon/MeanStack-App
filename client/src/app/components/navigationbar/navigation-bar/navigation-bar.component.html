@@ -1,17 +1,23 @@
 <nav>
   <mat-toolbar>
-   <button mat-icon-button>
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>My App</span>
-  <span class="spacer"></span>
-  <button mat-icon-button>
-    <mat-icon>login</mat-icon>
-  </button>
-  <span>Login</span>
-  <button mat-icon-button>
-   <mat-icon>person</mat-icon>
- </button>
- <span>Register</span>
-</mat-toolbar>
+    <div>
+      <button mat-button (click)="toHome()">
+        <mat-icon>home</mat-icon>
+        Home
+      </button>
+    </div>
+    <span class="spacer"></span>
+    <div>
+      <button mat-button (click)="toLogin()">
+        <mat-icon>login</mat-icon>
+        Login
+      </button>
+    </div>
+    <div>
+      <button mat-button (click)="toRegister()">
+        <mat-icon>person</mat-icon>
+        Register
+      </button>
+    </div>
+  </mat-toolbar>
 </nav>
