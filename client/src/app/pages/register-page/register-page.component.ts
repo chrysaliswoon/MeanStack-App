@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-register-page',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./register-page.component.css']
 })
 export class RegisterPageComponent {
+
+    // Change the Title when app is initialized
+    constructor(private title: Title) {}
+
+    ngOnInit(): void {
+        this.title.setTitle('Register')
+    }
 
 }

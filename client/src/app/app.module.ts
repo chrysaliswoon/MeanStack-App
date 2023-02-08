@@ -13,13 +13,25 @@ import { LoginFormComponent } from './components/forms/login-form/login-form.com
 import { RegisterFormComponent } from './components/forms/register-form/register-form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Error1PageComponent } from './pages/error-page/error1-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProjectService } from './services/project.service';
+import { Day31Component } from './components/projects/day31.component';
+import { Day31WorkshopComponent } from './components/projects/day31-workshop.component';
+import { ProjectPageComponent } from './pages/project-page/project-page.component';
+import { Day31ImageComponent } from './components/projects/day31-image.component';
 
+// View - Routes 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'home', component: HomePageComponent},
   {path: 'login', component: LoginPageComponent},
+  {path:'projects', component: ProjectPageComponent},
+  // {path: 'projects/:projectId', component:},
   {path: 'register', component: RegisterPageComponent},
-  {path: '**', redirectTo: '/', pathMatch: 'full'}
+  {path: '404', component: Error1PageComponent},
+  // Wildcard - Catch
+  {path: '**', redirectTo: '404', pathMatch: 'full'}
 
 ]
 
@@ -31,7 +43,12 @@ const appRoutes: Routes = [
     RegisterPageComponent,
     HomePageComponent,
     LoginFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    Error1PageComponent,
+    Day31Component,
+    Day31WorkshopComponent,
+    ProjectPageComponent,
+    Day31ImageComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +56,10 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
