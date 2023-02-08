@@ -20,6 +20,8 @@ import { ProjectPageComponent } from './pages/project-page/project-page.componen
 import { Day31Component } from './components/projects/day31/day31.component';
 import { Day31ImageComponent } from './components/projects/day31/day31-image.component';
 import { Day31WorkshopComponent } from './components/projects/day31Workshop/day31-workshop.component';
+import { Day31WorkshopInventoryComponent } from './components/projects/day31Workshop/day31-workshop-inventory.component';
+import { Day31WorkshopCartComponent } from './components/projects/day31Workshop/day31-workshop-cart.component';
 
 // View - Routes 
 const appRoutes: Routes = [
@@ -49,7 +51,9 @@ const appRoutes: Routes = [
     ProjectPageComponent,
     Day31Component,
     Day31ImageComponent,
-    Day31WorkshopComponent
+    Day31WorkshopComponent,
+    Day31WorkshopInventoryComponent,
+    Day31WorkshopCartComponent
   ],
   imports: [
     BrowserModule,

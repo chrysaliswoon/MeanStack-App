@@ -1,0 +1,17 @@
+<h2>Cart</h2>
+
+<div>
+    <h2>Your cart is empty</h2>
+</div>
+
+<div *ngIf="cart.length > 0">
+    <div *ngFor="let c of cart; let i = index">
+        <img src="/assets/fruits/{{c.imageUrl}}.png" alt="{{c.name}}" width="100">
+        <h2>{{c.name}}</h2>
+        <h4>Qty: {{c.quantity}}</h4>
+        <button type="button" mat-mini-fab color="warn" (click)="deleteItem(i)"><mat-icon>delete</mat-icon></button>
+        <button type="button" mat-mini-fab color="accent" (click)="addQty(i)"><mat-icon>add</mat-icon></button>
+        <button type="button" mat-mini-fab color="accent" (click)="reduceQty(i)"><mat-icon>remove</mat-icon></button>
+
+    </div>
+</div>

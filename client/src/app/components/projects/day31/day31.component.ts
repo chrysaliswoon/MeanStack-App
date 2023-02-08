@@ -8,7 +8,7 @@ import { Image } from 'src/app/models/day31';
 })
 export class Day31Component {
 
-  image = "../assets/sheltie.jpeg";
+  image = "/assets/sheltie.jpeg";
   imageWidth = 20
 
   dogImages = [
