@@ -3,7 +3,7 @@
 <h1>Order for: {{name | uppercase}}</h1>
 <h2><code>{{order | json}}</code></h2>
 
-<form>
+<form [formGroup]="form" (ngSubmit)="processForm()">
     <table>
         <tr>
             <td>
@@ -11,7 +11,7 @@
             </td>
             <td>
                 <mat-form-field hintLabel="Max 10 characters" appearance="fill">
-                    <input matInput #input maxlength="10" placeholder="Ex. Alex">
+                    <input type="text"  matInput #input maxlength="10" placeholder="Ex. Alex" formControlName="name">
                     <mat-hint align="end">{{input.value.length}}/10</mat-hint>
                 </mat-form-field>
             </td>
@@ -23,7 +23,7 @@
             </td>
             <td>
                 <mat-form-field appearance="fill">
-                <input matInput placeholder="alex@gmail.com">
+                <input type="email"  matInput placeholder="alex@gmail.com">
                 </mat-form-field>
             </td>
         </tr>
@@ -46,11 +46,45 @@
         <tr>
             <td></td>
                 <td class="button-row">
-                    <button mat-raised-button color="warn" type="button">Reset Form</button>
-                    <button mat-raised-button color="accent" type="button">Add Item</button>
-                    <button mat-raised-button color="primary" type="submit">Process Order</button>
+                    <button mat-raised-button color="warn" type="button" (click)="clearForm()">Reset Form</button>
+                    <button mat-raised-button color="accent" type="button" (click)="addItem()">Add Item</button>
+                    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Process Order</button>
                 </td>
         </tr>
+    </table>
+
+    <div *ngIf="lineItems.length <= 0">
+        <h2>Your cart is empty</h2>
+    </div>
+
+    <table *ngIf="lineItems.length > 0">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let li of lineItems.controls; let i = index"
+          [formGroupName]="i">
+                <td>
+                    <mat-form-field appearance="fill">
+                        <input type="text" matInput placeholder="Item" formControlName="item">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="fill">
+                        <input type="number" matInput placeholder="Minimum order is 1" formControlName="quantity">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <button mat-icon-button type="button" (click)="deleteItem(i)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+
     </table>
 
 </form>
