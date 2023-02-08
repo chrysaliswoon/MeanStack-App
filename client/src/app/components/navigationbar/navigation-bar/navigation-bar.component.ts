@@ -25,4 +25,8 @@ export class NavigationBarComponent implements OnInit {
     this.router.navigate(['/home'])
   }
 
+  toProjects() {
+    this.router.navigate(['/projects'])
+  }
+
 }
