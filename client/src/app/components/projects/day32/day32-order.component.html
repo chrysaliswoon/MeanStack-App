@@ -1,0 +1,56 @@
+<!-- Pipes -->
+<!-- Used in templates to transform values, typically for display -->
+<h1>Order for: {{name | uppercase}}</h1>
+<h2><code>{{order | json}}</code></h2>
+
+<form>
+    <table>
+        <tr>
+            <td>
+                <label>Name:</label> 
+            </td>
+            <td>
+                <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+                    <input matInput #input maxlength="10" placeholder="Ex. Alex">
+                    <mat-hint align="end">{{input.value.length}}/10</mat-hint>
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Email:</label> 
+            </td>
+            <td>
+                <mat-form-field appearance="fill">
+                <input matInput placeholder="alex@gmail.com">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Rush The Order: </td>
+            <td>
+                <mat-checkbox></mat-checkbox>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <div>Valid: </div>
+                <div>Pristine: </div>
+                <div>Dirty: </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+                <td class="button-row">
+                    <button mat-raised-button color="warn" type="button">Reset Form</button>
+                    <button mat-raised-button color="accent" type="button">Add Item</button>
+                    <button mat-raised-button color="primary" type="submit">Process Order</button>
+                </td>
+        </tr>
+    </table>
+
+</form>

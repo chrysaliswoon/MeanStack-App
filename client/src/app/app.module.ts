@@ -22,6 +22,8 @@ import { Day31ImageComponent } from './components/projects/day31/day31-image.com
 import { Day31WorkshopComponent } from './components/projects/day31Workshop/day31-workshop.component';
 import { Day31WorkshopInventoryComponent } from './components/projects/day31Workshop/day31-workshop-inventory.component';
 import { Day31WorkshopCartComponent } from './components/projects/day31Workshop/day31-workshop-cart.component';
+import { Day32Component } from './components/projects/day32/day32.component';
+import { Day32OrderComponent } from './components/projects/day32/day32-order.component';
 
 // View - Routes 
 const appRoutes: Routes = [
@@ -30,6 +32,7 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginPageComponent},
   {path:'projects', component: ProjectPageComponent},
   {path: 'projects/day31', component: Day31Component},
+  {path: 'projects/day32', component: Day32Component},
   {path: 'projects/day31Workshop', component: Day31WorkshopComponent},
   {path: 'register', component: RegisterPageComponent},
   {path: '404', component: Error1PageComponent},
@@ -53,7 +56,9 @@ const appRoutes: Routes = [
     Day31ImageComponent,
     Day31WorkshopComponent,
     Day31WorkshopInventoryComponent,
-    Day31WorkshopCartComponent
+    Day31WorkshopCartComponent,
+    Day32Component,
+    Day32OrderComponent
   ],
   imports: [
     BrowserModule,

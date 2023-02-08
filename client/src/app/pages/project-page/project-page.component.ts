@@ -7,15 +7,18 @@ import { Component } from '@angular/core';
 })
 export class ProjectPageComponent {
 
-  showDay31 = true;
-  showDay32 = false;
+  showDay31 = false;
+  showDay32 = true;
   showDay31Workshop = false;
   showDay32Workshop = false;
 
 
   switchDay31() {
     this.showDay31 = true;
+    this.showDay32 = false;
     this.showDay31Workshop = false;
+    this.showDay32Workshop = false;
+
   }
 
   switchDay32() {
@@ -34,7 +37,6 @@ export class ProjectPageComponent {
     this.showDay31Workshop = false;
     this.showDay31 = false;
     this.showDay32 = false;
-
   }
 
 }
