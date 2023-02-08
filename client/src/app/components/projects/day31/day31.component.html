@@ -1,21 +1,24 @@
-<h1>Lesson 1: Input & Output</h1>
+<div class="center-it">
+    <h1>Lesson 1: Input & Output</h1>
+    <!-- Accessing Properties using {{}} -->
+    <h3>Number of Images: {{dogImages.length}}</h3>
+    
+    <div *ngIf="(dogImages.length % 2) > 0">
+        <h3>Odd number of Images</h3>
+    </div>
 
-<!-- Accessing Properties using {{}} -->
-<h3>Number of Images: {{dogImages.length}}</h3>
-
-<div *ngIf="(dogImages.length % 2) > 0">
-    <h3>Odd number of Images</h3>
+    <div *ngIf="(dogImages.length % 2) <= 0">
+        <h3>Even number of Images</h3>
+    </div>
 </div>
-
-
-<div *ngIf="(dogImages.length % 2) <= 0">
-    <h3>Even number of Images</h3>
+    
+    
+<div class="side-by-side">
+    <app-day31-image *ngFor="let img of dogImages"
+    
+        [imageURL]="img"
+        (onClicked)="imageClicked($event)">
+    </app-day31-image>
 </div>
-
-<app-day31-image *ngFor="let img of dogImages"
-
-    [imageURL]="img"
-    (onClicked)="imageClicked($event)">
-</app-day31-image>
 
 

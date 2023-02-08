@@ -3,6 +3,7 @@ section {
 }
 
 .button-row{
+    padding-left: 30px;
     padding-top: 20px;
     padding-bottom: 30px;
     display: table-cell;

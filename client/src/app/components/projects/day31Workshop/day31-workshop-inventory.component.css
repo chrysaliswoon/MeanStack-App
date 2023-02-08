@@ -1,10 +1,13 @@
-
+.container {
+  display: flex;
+  align-content: space-evenly;
+}
 
 .inventory {
     margin: 5px;
     border: 1px grey solid;
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 8px;
     justify-content: space-between;
-
+    align-content: space-evenly;
   }
