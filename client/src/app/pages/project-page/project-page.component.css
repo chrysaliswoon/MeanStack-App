@@ -1,0 +1,22 @@
+section {
+    display: table;
+}
+
+.button-row{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    display: table-cell;
+    max-width: 100%;
+}
+
+.button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+    justify-content: center;
+    justify-content: space-between;
+}
+  
+.content {
+    justify-content: space-evenly;
+    margin: auto;  
+    padding: 40px;
+}

@@ -13,8 +13,9 @@ export class Day31ImageComponent {
   imageURL = "/assets/sheltie.jpeg"
 
   @Input()
-  width = 100
+  width = 10
 
+  // Subject is similar to Event Emitter where it allows you to pass data from one compone to aother
   @Output()
   onClicked = new Subject<Image>()
 
@@ -27,7 +28,7 @@ export class Day31ImageComponent {
       size: this.width
     }
     this.onClicked.next(img)
-    console.info(this.onClicked.next(img))
+    //console.info(this.onClicked.next(img))
   }
 
   resize(factor: number) {

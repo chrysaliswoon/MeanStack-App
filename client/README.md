@@ -2,20 +2,21 @@
 
 ## Terminal Commands
 
-Generate component:
+**Generate component:**
 
 ```typescript
 ng g c <component name> --flat --module app.module
 ```
 
-Run Angular Client:
+**Run Angular Client:**
 
 ```
 ng serve -o
 ```
 
-Run SpringBoot Server:
+**Run SpringBoot Server:**
 
 ```
 mvn spring-boot:run
 ```
+

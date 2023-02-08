@@ -16,10 +16,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Error1PageComponent } from './pages/error-page/error1-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProjectService } from './services/project.service';
-import { Day31Component } from './components/projects/day31.component';
-import { Day31WorkshopComponent } from './components/projects/day31-workshop.component';
 import { ProjectPageComponent } from './pages/project-page/project-page.component';
-import { Day31ImageComponent } from './components/projects/day31-image.component';
+import { Day31Component } from './components/projects/day31/day31.component';
+import { Day31ImageComponent } from './components/projects/day31/day31-image.component';
+import { Day31WorkshopComponent } from './components/projects/day31Workshop/day31-workshop.component';
 
 // View - Routes 
 const appRoutes: Routes = [
@@ -27,7 +27,8 @@ const appRoutes: Routes = [
   {path: 'home', component: HomePageComponent},
   {path: 'login', component: LoginPageComponent},
   {path:'projects', component: ProjectPageComponent},
-  // {path: 'projects/:projectId', component:},
+  {path: 'projects/day31', component: Day31Component},
+  {path: 'projects/day31Workshop', component: Day31WorkshopComponent},
   {path: 'register', component: RegisterPageComponent},
   {path: '404', component: Error1PageComponent},
   // Wildcard - Catch
@@ -45,10 +46,10 @@ const appRoutes: Routes = [
     LoginFormComponent,
     RegisterFormComponent,
     Error1PageComponent,
-    Day31Component,
-    Day31WorkshopComponent,
     ProjectPageComponent,
-    Day31ImageComponent
+    Day31Component,
+    Day31ImageComponent,
+    Day31WorkshopComponent
   ],
   imports: [
     BrowserModule,
