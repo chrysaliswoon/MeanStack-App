@@ -23,8 +23,8 @@ export class Day32OrderComponent implements OnInit{
   private createForm(): FormGroup {
     this.lineItems = this.fb.array([])
     return this.fb.group({
-      name: this.fb.control<string>('Fred', [Validators.required, Validators.minLength(10)]),
-      email:this.fb.control<string>('fed@gmail.com', [Validators.required, Validators.email]),
+      name: this.fb.control<string>('Fred', [Validators.required, Validators.maxLength(10)]),
+      email:this.fb.control<string>('fred@gmail.com', [Validators.required, Validators.email]),
       lineItems: this.lineItems
     })
   }
@@ -45,8 +45,8 @@ export class Day32OrderComponent implements OnInit{
 
   private createLineItem(): FormGroup {
     return this.fb.group({
-      item: this.fb.control<string>('apple', [Validators.required]),
-      quantity: this.fb.control<number>(1, [Validators.required, Validators.min(1), Validators.max(100)])
+      item: this.fb.control<string>('', [Validators.required]),
+      quantity: this.fb.control<number>(1,[Validators.required, Validators.min(1), Validators.max(100)])
     })
   }
 

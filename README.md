@@ -24,3 +24,7 @@ ng serve -o
 mvn spring-boot:run
 ```
 
+## Subscription
+
+- You pass in a function to it and it calls it.
+

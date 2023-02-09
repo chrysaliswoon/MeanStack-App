@@ -23,7 +23,7 @@
             </td>
             <td>
                 <mat-form-field appearance="fill">
-                <input type="email"  matInput placeholder="alex@gmail.com">
+                <input type="email"  matInput placeholder="alex@gmail.com" formControlName="email">
                 </mat-form-field>
             </td>
         </tr>
@@ -38,9 +38,9 @@
         <tr>
             <td></td>
             <td>
-                <div>Valid: </div>
-                <div>Pristine: </div>
-                <div>Dirty: </div>
+                <div> valid: {{ form.valid }}, invalid: {{ form.invalid }} </div>
+                <div> pristine: {{ form.pristine }}, dirty: {{ form.dirty }} </div>
+                <div> email: {{ form.get('email')?.valid }} </div>
             </td>
         </tr>
         <tr>
@@ -64,13 +64,13 @@
                 <th>Quantity</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody formArrayName="lineItems">
             <tr *ngFor="let li of lineItems.controls; let i = index"
           [formGroupName]="i">
                 <td>
                     <mat-form-field appearance="fill">
-                        <input type="text" matInput placeholder="Item" formControlName="item">
-                    </mat-form-field>
+                        <input type="text"  matInput formControlName="item">
+                        </mat-form-field>
                 </td>
                 <td>
                     <mat-form-field appearance="fill">
