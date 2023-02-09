@@ -24,6 +24,8 @@ import { Day31WorkshopInventoryComponent } from './components/projects/day31Work
 import { Day31WorkshopCartComponent } from './components/projects/day31Workshop/day31-workshop-cart.component';
 import { Day32Component } from './components/projects/day32/day32.component';
 import { Day32OrderComponent } from './components/projects/day32/day32-order.component';
+import { Day32WorkshopComponent } from './components/projects/day32Workshop/day32-workshop.component';
+import { Day32WorkshopTodoListComponent } from './components/projects/day32Workshop/day32-workshop-todo-list.component';
 
 // View - Routes 
 const appRoutes: Routes = [
@@ -34,6 +36,7 @@ const appRoutes: Routes = [
   {path: 'projects/day31', component: Day31Component},
   {path: 'projects/day32', component: Day32Component},
   {path: 'projects/day31Workshop', component: Day31WorkshopComponent},
+  {path: 'projects/day32Workshop', component: Day32WorkshopComponent},
   {path: 'register', component: RegisterPageComponent},
   {path: '404', component: Error1PageComponent},
   // Wildcard - Catch
@@ -58,7 +61,9 @@ const appRoutes: Routes = [
     Day31WorkshopInventoryComponent,
     Day31WorkshopCartComponent,
     Day32Component,
-    Day32OrderComponent
+    Day32OrderComponent,
+    Day32WorkshopComponent,
+    Day32WorkshopTodoListComponent
   ],
   imports: [
     BrowserModule,

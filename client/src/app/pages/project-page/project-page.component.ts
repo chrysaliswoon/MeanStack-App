@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 export class ProjectPageComponent {
 
   showDay31 = false;
-  showDay32 = true;
+  showDay32 = false;
   showDay31Workshop = false;
-  showDay32Workshop = false;
+  showDay32Workshop = true;
 
 
   switchDay31() {

@@ -1,0 +1,75 @@
+<form [formGroup]="form" (ngSubmit)="processForm()">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>
+                <mat-form-field  appearance="fill">
+                    <input type="text" matInput  placeholder="Ex. Alex" formControlName="name">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Email:</td>
+            <td>
+                <mat-form-field appearance="fill">
+                    <input type="email"  matInput placeholder="alex@gmail.com" formControlName="email">
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div class="apart">
+                    <button mat-raised-button color="primary" type="submit" >Save Tasks</button>
+                    <button mat-raised-button color="accent" type="button" (click)="addTask()">Add Task</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <table *ngIf="taskArray.length > 0"> 
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th>Priority</th>
+                <th>Due Date</th>
+            </tr>
+        </thead>
+
+        <tbody formArrayName="taskList">
+            <tr *ngFor="let t of taskArray.controls; let i = index" [formGroupName]="i">
+                <td>
+                    <mat-form-field  appearance="fill">
+                        <input type="text"  matInput placeholder="Task Description" formControlName="task">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Priority</mat-label>
+                        <mat-select formControlName="priority">
+                          <mat-option *ngFor="let p of priority" [value]="p.value">
+                            {{p.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="dueDate">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                </td>
+                <td>
+                    <button mat-icon-button type="button" (click)="deleteTask(i)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</form>
