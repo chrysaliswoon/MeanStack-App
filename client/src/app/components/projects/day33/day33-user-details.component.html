@@ -1,0 +1,37 @@
+<form [formGroup]="userDetailsForm" (submit)="submitForm()">
+
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>
+                <mat-form-field  appearance="fill">
+                    <input type="text" matInput  placeholder="Ex. Alex" formControlName="name">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Email:</td>
+            <td>
+                <mat-form-field appearance="fill">
+                    <input type="email"  matInput placeholder="alex@gmail.com" formControlName="email">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Comments:</td>
+            <td>
+                <mat-form-field appearance="fill">
+                    <textarea matInput formControlName="comments" cols="30" rows="4" formControlName="comments"></textarea>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <ng-content></ng-content>
+            </td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,23 @@
+<div class="center-it">
+<h1>Users</h1>
+</div>
+
+<!-- <h2 #h2>This is H2</h2> -->
+
+
+<div class="side-by-side">
+<table>
+    <tr>
+        <td>
+            <app-day33-user-details (onUserDetail)="process($event)" #userDetail></app-day33-user-details>
+            <div>
+                <button mat-raised-button color="primary" type="submit">Add</button>
+                <button mat-raised-button color="warn" type="button" (click)="deleteUser()">Delete</button>
+            </div>
+        </td>
+        <td>
+            <app-day33-friends-list [friends]="users" [name]="newName"></app-day33-friends-list>
+        </td>
+    </tr>
+</table>
+</div>

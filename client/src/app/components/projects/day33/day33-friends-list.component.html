@@ -1,0 +1,10 @@
+<div *ngIf="friends.length <= 0">
+    <h2>There are currently no friends in your list</h2>
+</div>
+
+<div *ngIf="friends.length > 0">
+    <h4>Number of friends: {{count}}</h4>
+    <div *ngFor="let f of friends">
+        <h4>{{f.name}}</h4>
+    </div>
+</div>
