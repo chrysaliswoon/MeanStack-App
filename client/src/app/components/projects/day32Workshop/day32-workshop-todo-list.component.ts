@@ -37,7 +37,7 @@ export class Day32WorkshopTodoListComponent implements OnInit{
     return this.fb.group({
       name: this.fb.control('Alex', [Validators.required]),
       email: this.fb.control('alex@gmail.com'),
-      taskList: this.taskArray
+      tasks: this.taskArray,
     })
   }
 

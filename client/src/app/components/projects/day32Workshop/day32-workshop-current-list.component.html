@@ -1,0 +1,34 @@
+<h1>Current Tasks</h1>
+
+<div *ngIf="todoList.length == 0">
+    <h3>You have no outstanding tasks to complete</h3>
+</div>
+
+<div>
+    <div *ngFor="let l of todoList; let i = index">
+        <div *ngIf="todoList.length > 0">
+                <table *ngFor="let t of l.tasks">
+                    <thead>
+                        <tr>
+                            <th>Completed</th>
+                            <th>Task</th>
+                            <th>Priority</th>
+                            <th>Due Date:</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <mat-checkbox></mat-checkbox>
+                            </td>
+                            <td>{{t.task}}</td>
+                            <td>{{t.priority}}</td>
+                            <td>{{t.dueDate | date}}</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+        </div>
+    </div>
+</div>

@@ -1,3 +1,5 @@
+<h1>Create New Task</h1>
+
 <form [formGroup]="form" (ngSubmit)="processForm()">
     <table>
         <tr>
@@ -37,7 +39,7 @@
             </tr>
         </thead>
 
-        <tbody formArrayName="taskList">
+        <tbody formArrayName="tasks">
             <tr *ngFor="let t of taskArray.controls; let i = index" [formGroupName]="i">
                 <td>
                     <mat-form-field  appearance="fill">
