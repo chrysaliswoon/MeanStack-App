@@ -2,7 +2,7 @@
     <h2>Lessons:</h2>
             <button mat-raised-button (click)="switchDay31()">Lesson 1</button>
             <button mat-raised-button (click)="switchDay32()">Lesson 2</button>
-            <button mat-raised-button>Lesson 3</button>
+            <button mat-raised-button (click)="switchDay33()">Lesson 3</button>
             <button mat-raised-button>Lesson 4</button>
             <button mat-raised-button>Lesson 5</button>
             <button mat-raised-button>Lesson 6</button>
@@ -14,7 +14,7 @@
     <h2>Workshops:</h2>
             <button mat-raised-button (click)="switchDay31Workshop()">E-Commerce Store</button>
             <button mat-raised-button (click)="switchDay32Workshop()">To-Do List</button>
-            <button mat-raised-button>Cart Order</button>
+            <button mat-raised-button (click)="switchDay33Workshop()">Cart Order</button>
             <button mat-raised-button>Giphy</button>
             <button mat-raised-button>Contact Form</button>
             <button mat-raised-button>Board Games</button>
@@ -29,5 +29,9 @@
     <app-day31-workshop *ngIf="showDay31Workshop == true"></app-day31-workshop>
     <app-day32 *ngIf="showDay32 == true"></app-day32>
     <app-day32-workshop *ngIf="showDay32Workshop == true"></app-day32-workshop>
+    <app-day33 *ngIf="showDay33 == true"></app-day33>
+    <app-day33-workshop *ngIf="showDay33Workshop == true"></app-day33-workshop>
+
+
 
 </div>

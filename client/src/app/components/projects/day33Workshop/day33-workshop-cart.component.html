@@ -1,0 +1,114 @@
+<h2>Cart</h2>
+
+<div>
+    <form [formGroup]="form" (submit)="processForm()">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <mat-form-field  appearance="fill">
+                        <input matInput  placeholder="Ex. Alex" formControlName="name">
+                    </mat-form-field>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Address:</td>
+                <td>
+                    <mat-form-field  appearance="fill">
+                        <input matInput  placeholder="Address" formControlName="address">
+                    </mat-form-field>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="alex@gmail.com" formControlName="email">
+                    </mat-form-field>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Phone:</td>
+                <td>
+                    <mat-form-field  appearance="fill">
+                        <input matInput placeholder="Address" formControlName="phone">
+                    </mat-form-field>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Express Delivery:</td>
+                <td>
+                    <mat-checkbox formControlName="express"></mat-checkbox>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Delivery: </td>
+                <td>
+                    <mat-radio-group formControlName="delivery">
+                        <mat-radio-button value="A">0900 - 1100</mat-radio-button>
+                        <mat-radio-button value="B">1100 - 1500</mat-radio-button>
+                        <mat-radio-button value="C">1500 - 1900</mat-radio-button>
+                    </mat-radio-group>                      
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <button mat-raised-button color="primary" type="submit" >Checkout</button>
+                    <button mat-raised-button color="accent" type="button" (click)="addLineItem()">Add Item</button>
+                </td>
+            </tr>
+        </table>
+
+        <div *ngIf="lineItems.length <= 0">
+            <h2>Your cart is empty</h2>
+        </div>
+
+        <div>
+            <h2>Cart: </h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                    </tr>
+                </thead>
+                
+                <tbody formArrayName="lineItems">
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Item</mat-label>
+                                <input matInput placeholder="Ex. Milk" formControlName="item">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Quantity</mat-label>
+                                <input matInput placeholder="1" formControlName="quantity">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Price</mat-label>
+                                <input matInput placeholder="$2.50" formControlName="unitPrice">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <!-- <button mat-icon-button type="button" (click)="removeLineItem(i)">
+                                <mat-icon>delete</mat-icon>
+                            </button> -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>

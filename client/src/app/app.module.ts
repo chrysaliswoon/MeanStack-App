@@ -26,6 +26,13 @@ import { Day32Component } from './components/projects/day32/day32.component';
 import { Day32OrderComponent } from './components/projects/day32/day32-order.component';
 import { Day32WorkshopComponent } from './components/projects/day32Workshop/day32-workshop.component';
 import { Day32WorkshopTodoListComponent } from './components/projects/day32Workshop/day32-workshop-todo-list.component';
+import { Day32WorkshopCurrentListComponent } from './components/projects/day32Workshop/day32-workshop-current-list.component';
+import { Day33Component } from './components/projects/day33/day33.component';
+import { Day33UserDetailsComponent } from './components/projects/day33/day33-user-details.component';
+import { Day33FriendsListComponent } from './components/projects/day33/day33-friends-list.component';
+import { Day33WorkshopComponent } from './components/projects/day33Workshop/day33-workshop.component';
+import { Day33WorkshopCartComponent } from './components/projects/day33Workshop/day33-workshop-cart.component';
+import { Day33WorkshopOrderComponent } from './components/projects/day33Workshop/day33-workshop-order.component';
 
 // View - Routes 
 const appRoutes: Routes = [
@@ -33,10 +40,6 @@ const appRoutes: Routes = [
   {path: 'home', component: HomePageComponent},
   {path: 'login', component: LoginPageComponent},
   {path:'projects', component: ProjectPageComponent},
-  {path: 'projects/day31', component: Day31Component},
-  {path: 'projects/day32', component: Day32Component},
-  {path: 'projects/day31Workshop', component: Day31WorkshopComponent},
-  {path: 'projects/day32Workshop', component: Day32WorkshopComponent},
   {path: 'register', component: RegisterPageComponent},
   {path: '404', component: Error1PageComponent},
   // Wildcard - Catch
@@ -63,7 +66,14 @@ const appRoutes: Routes = [
     Day32Component,
     Day32OrderComponent,
     Day32WorkshopComponent,
-    Day32WorkshopTodoListComponent
+    Day32WorkshopTodoListComponent,
+    Day32WorkshopCurrentListComponent,
+    Day33Component,
+    Day33UserDetailsComponent,
+    Day33FriendsListComponent,
+    Day33WorkshopComponent,
+    Day33WorkshopCartComponent,
+    Day33WorkshopOrderComponent
   ],
   imports: [
     BrowserModule,

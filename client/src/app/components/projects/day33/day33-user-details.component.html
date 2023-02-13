@@ -7,6 +7,9 @@
                 <mat-form-field  appearance="fill">
                     <input type="text" matInput  placeholder="Ex. Alex" formControlName="name">
                 </mat-form-field>
+                <div *ngIf="userDetailsForm.get('name')?.invalid && userDetailsForm.get('name')?.dirty">
+                    Please enter your name
+                  </div>
             </td>
         </tr>
 
