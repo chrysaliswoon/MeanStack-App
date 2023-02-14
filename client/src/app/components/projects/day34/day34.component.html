@@ -1,0 +1,44 @@
+<h1>httpbin.org</h1>
+
+<h1>{{data|json}}</h1>
+
+<form [formGroup]="form" (ngSubmit)="processForm()">
+    <table>
+        <tr>
+            <td>User Id:</td>
+            <td>
+                <mat-form-field  appearance="outline">
+                    <input type="text" matInput formControlName="userId">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Name:</td>
+            <td>
+                <mat-form-field  appearance="outline">
+                    <input type="text" matInput formControlName="name">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Email:</td>
+            <td>
+                <mat-form-field  appearance="outline">
+                    <input type="email" matInput formControlName="email">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <button mat-raised-button color="primary" type="button" (click)="doPost()">POST</button>
+                <button mat-raised-button color="primary" type="button" (click)="doPostAsform()">POST as Form</button>
+                <button mat-raised-button color="primary" type="submit" >GET</button>
+            </td>
+        </tr>
+    </table>
+
+</form>
